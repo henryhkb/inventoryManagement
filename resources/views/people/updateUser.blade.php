@@ -19,8 +19,7 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Update FullName</label>
-                            <input type="text" name="name" class="form-control" value="{{ $user->name }}">
-                            <span class="text text-danger">@error('name'){{ $message}} @enderror</span>
+                            <input type="text" name="name" class="form-control" value="{{ $user->name }}">   
                         </div>
                     </div>
                    
@@ -28,7 +27,6 @@
                         <div class="form-group">
                             <label>Update Username</label>
                             <input type="text" name="username" class="form-control" value="{{ $user->username }}">
-                            <span class="text text-danger">@error('username') {{ $message }} @enderror</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">

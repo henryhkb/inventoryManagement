@@ -21,10 +21,13 @@
                             </div>
                             <div class="dash-widgetcontent">
                                 <h5>$<span class="counters" data-count="4385.00">$4,385.00</span></h5>
-                                <h6>Total Sales Made</h6>
+                                <h6>Total Sales Made Amount</h6>
                             </div>
                         </div>
                     </div>
+
+                   
+
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="dash-widget dash2">
                             <div class="dash-widgetimg">
@@ -32,11 +35,14 @@
                             </div>
                             <div class="dash-widgetcontent">
                                 <h5>$<span class="counters" data-count="385656.50">385,656.50</span></h5>
-                                <h6>Current Sales</h6>
+                                <h6>Current Sales Made Amount</h6>
                             </div>
                         </div>
                     </div>
+
+                    <br>
                    
+
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count">
                             <div class="dash-counts">
@@ -58,6 +64,18 @@
                             </div>
                             <div class="dash-imgs">
                                 <i data-feather="file"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count">
+                            <div class="dash-counts">
+                                <h4>100</h4>
+                                <h5>Categories</h5>
+                            </div>
+                            <div class="dash-imgs">
+                                <i data-feather="user"></i>
                             </div>
                         </div>
                     </div>

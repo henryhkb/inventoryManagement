@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\productsController;
@@ -7,7 +8,7 @@ use App\Http\Controllers\categoryController;
 use App\Http\Controllers\brandController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\anyController;
+use App\Http\Controllers\storeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +72,16 @@ Route::post('/addUser', [userController::class,'addUser']);
 Route::get('/updateUser/{id}', [userController::class,'updateUser']);
 Route::post('/updateUserConfirmed/{id}', [userController::class,'updateUserConfirmed']);
 Route::get('/delete/{id}', [userController::class,'delete']);
-//Route::resource('test',anyController::class);
+//End route for users
+
+
+//Route for store
+Route::get('/addStore', function(){
+    return view('people.addStore');
+});
+Route::post('/addShop', [storeController::class, 'addStore']);
+Route::get('/storeList', [storeController::class, 'storeList']);
+Route::get('/updateShop/{id}', [storeController::class,'updateShop']);
+Route::post('/confirmUpdate/{id}', [storeController::class,'confirmUpdate']);
+Route::get('/deleteShop/{id}', [storeController::class,'delete']);
+//End route for store

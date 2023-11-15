@@ -23,6 +23,7 @@ class productsController extends Controller
     public function addProduct(Request $request){
         if(Auth::user()){
         $addProduct = new product;
+        $storeProduct = new accountProduct;
        
         $addProduct->user_id = Auth::id();
         $addProduct->user_name = AUth::user()->name;
@@ -35,7 +36,10 @@ class productsController extends Controller
         $addProduct->total_Amount = $request->total_Amount;
         $addProduct->product_Status = $request->productStatus;
 
+        $storeProduct = $addProduct->replicate();
+
         $addProduct->save();
+        $storeProduct->save();
 
     }
 
