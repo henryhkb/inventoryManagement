@@ -21,7 +21,7 @@ class categoryController extends Controller
 
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Category Added Successfully');
 
     }
 

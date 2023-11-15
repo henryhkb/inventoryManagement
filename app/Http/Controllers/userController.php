@@ -30,7 +30,7 @@ class userController extends Controller
 
         $addUser->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('messsage', 'User Added Successfully');
     }
 
     public function userList(){
@@ -54,7 +54,7 @@ class userController extends Controller
 
         $user->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'User Details Updated Successfully');
 
     }
 
@@ -63,7 +63,7 @@ class userController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'User has been Successfully Deleted');
 
     }
 

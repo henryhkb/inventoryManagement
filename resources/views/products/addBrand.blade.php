@@ -2,7 +2,20 @@
 @section('content')
 
 <div class="page-wrapper">
+    @if (session()->has('message'))
+    <div class="alert alert-warning alert-dismissible fade show w-25" role="alert">
+      <strong>{{session()->get('message')}}</strong>
+      <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+    </div>
+@endif
+
     <div class="content">
+        @if (session()->has('message'))
+        <div class="alert alert-warning alert-dismissible fade show w-25" role="alert">
+          <strong>{{session()->get('message')}}</strong>
+          <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+        </div>
+    @endif
         <div class="page-header">
             <div class="page-title">
                 <h4>Brand ADD</h4>
@@ -29,8 +42,8 @@
                     </div>
                     
                     <div class="col-lg-12">
-                        <input type="submit" class="btn btn-submit me-2 bt bg-success" value="SUBMIT">
-                        <a href="{{url('brandList')}}" class="btn btn-cancel; bg-info">Cancel</a>
+                        <input type="submit" class="btn btn-submit me-2  bg-success" value="SUBMIT">
+                        <a href="{{url('brandList')}}" class="btn btn-cancel bg-info">Cancel</a>
                     </div>
                 </div>
             </div>

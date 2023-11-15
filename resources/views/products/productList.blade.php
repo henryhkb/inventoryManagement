@@ -42,8 +42,13 @@
                                 <td>{{ $product->product_Category }}</td>   
                                 <td>{{ $product->product_Brand }}</td>   
                                 <td>{{ $product->product_Location}}</td>   
-                                <td>{{ $product->product_Price }}</td>   
-                                <td>{{ $product->product_Quantity }}</td>   
+                                <td>{{ $product->product_Price }}</td> 
+                               
+
+                                @if ($product->product_Quantity < 60)
+                                <td class="text text-danger">{{ $product->product_Quantity }}</td>  
+                                @endif
+
                                 <td>{{ $product->total_Amount }}</td>   
                                 <td>{{ $product->product_Status }}</td>
                                 <td>

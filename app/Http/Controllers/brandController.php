@@ -20,7 +20,7 @@ class brandController extends Controller
         $addproductBrand->save();
         }
         
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Brand Added Successfully');
     }
 
     public function productBrandList(){

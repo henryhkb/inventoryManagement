@@ -2,6 +2,13 @@
 @section('content')
 
 <div class="page-wrapper">
+
+    @if (session()->has('message'))
+    <div class="alert alert-warning alert-dismissible fade show w-25" role="alert">
+      <strong>{{session()->get('message')}}</strong>
+      <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+    </div>
+@endif
             <div class="content">
                 <div class="page-header">
                     <div class="page-title">
@@ -19,7 +26,7 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Product Name</label>
-                                        <input type="text" name="productName" class="form-control" required>
+                                        <input type="text" name="productName" class="form-control">
                                     </div>
                                 </div>
 
@@ -42,12 +49,13 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Brand</label>
-                                        @foreach ($brand as $brand)
-                                        <select class="select form-control" name="productBrand" required>
-                                            <option>Choose Brand</option>
-                                            <option value="{{ $brand->brandName }}">{{ $brand->brandName }}</option>
-                                        </select>
-                                        @endforeach                                      
+                                       
+                                        <select class="select form-control" name="productBrand" >
+                                            @foreach ($brand as $brand)
+                                                <option>Choose Brand</option>
+                                                <option value="{{ $brand->brandName }}">{{ $brand->brandName }}</option>
+                                            @endforeach 
+                                        </select>                                     
                                     </div>
                                 </div>
 

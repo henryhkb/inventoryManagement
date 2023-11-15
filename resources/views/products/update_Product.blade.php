@@ -42,12 +42,14 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Brand</label>
-                                        @foreach ($brand as $brand)
+                                       
                                         <select class="select form-control" name="productBrand">
+                                            @foreach ($brand as $brand)
                                             <option value="{{ $product->product_Brand }}">{{ $product->product_Brand }}</option>
                                             <option value="{{ $brand->brandName }}">{{ $brand->brandName }}</option>
+                                            @endforeach
                                         </select>
-                                        @endforeach                                      
+                                                                            
                                     </div>
                                 </div>
 

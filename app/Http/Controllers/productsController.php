@@ -23,7 +23,7 @@ class productsController extends Controller
     public function addProduct(Request $request){
         if(Auth::user()){
         $addProduct = new product;
-        $storeProduct = new accountProduct;
+     
        
         $addProduct->user_id = Auth::id();
         $addProduct->user_name = AUth::user()->name;
@@ -36,14 +36,14 @@ class productsController extends Controller
         $addProduct->total_Amount = $request->total_Amount;
         $addProduct->product_Status = $request->productStatus;
 
-        $storeProduct = $addProduct->replicate();
+       
 
         $addProduct->save();
-        $storeProduct->save();
+       
 
     }
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Product added successfully');
 
         
     }
@@ -65,6 +65,8 @@ class productsController extends Controller
 
     public function updateProductConfirm(Request $request, $id){
         $product = product::find($id);
+        $product->user_id = Auth::id();
+        $product->user_name = AUth::user()->name;
         $product->product_Name = $request->productName;
         $product->product_Category = $request->productCategory;
         $product->product_Brand = $request->productBrand;
@@ -76,7 +78,7 @@ class productsController extends Controller
 
         $product->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Product Updated Successfully');
 
     }
 
@@ -85,7 +87,7 @@ class productsController extends Controller
         $product = product::find($id);
         $product->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Product Deleted Successfully');
     }
 
    
