@@ -77,21 +77,21 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Price</label>
-                                        <input type="text" name="productPrice" class="form-control" ng-model="prodPrice" required>
+                                        <input type="number" id="productPrice" name="productPrice" step="any" class="form-control"  onkeyup="add_number()" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Quantity</label>
-                                        <input type="text" name="productQuantity" class="form-control" ng-model="prodQuantity" required>
+                                        <input type="number" id="productQuantity" name="productQuantity" step="any" class="form-control" onkeyup="add_number()" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Total Amount</label>
-                                        <input type="text" name="total_Amount" class="form-control" value="@{{ prodPrice * prodQuantity }}" readonly>
+                                        <input type="text" id="totalAmount" name="total_Amount" class="form-control" value="0"  readonly>
                                     </div>
                                 </div>
 
@@ -118,5 +118,16 @@
 
             </div>
         </div>
+
+<script>
+    function add_number(){
+        let productPrice = parseFloat(document.getElementById("productPrice").value);
+        if(isNaN(productPrice)) productPrice = 0;
+        let productQuantity = parseFloat(document.getElementById("productQuantity").value);
+        if(isNaN(productQuantity)) productQuantity = 0;
+        let result = productPrice * productQuantity;
+        document.getElementById("totalAmount").value = result;
+    }
+</script>
 
 @endsection

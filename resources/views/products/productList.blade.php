@@ -3,6 +3,8 @@
 
 
 <div class="page-wrapper">
+  
+
     <div class="content">
         <div class="page-header">
             <div class="page-title">
@@ -28,6 +30,7 @@
                                 <th>Location</th>
                                 <th>Price GH₵</th>
                                 <th>Quantity</th>
+                                <th>Updated Quantity</th>
                                 <th>Total GH₵</th>
                                 <th>Product Status</th>
                                 <th>Action</th>
@@ -47,8 +50,8 @@
 
                                 @if ($product->product_Quantity < 60)
                                 <td class="text text-danger">{{ $product->product_Quantity }}</td>  
-                                @endif
-
+                                @endif  
+                                <td>{{ $product->Updated_Stock }}</td>
                                 <td>{{ $product->total_Amount }}</td>   
                                 <td>{{ $product->product_Status }}</td>
                                 <td>

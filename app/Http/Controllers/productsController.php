@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\accountProduct;
+
 use App\Models\product;
 use App\Models\productCategory;
 use App\Models\productBrand;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\RedirectResponse;
 
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class productsController extends Controller
     public function addProduct(Request $request){
         if(Auth::user()){
         $addProduct = new product;
-     
+       
        
         $addProduct->user_id = Auth::id();
         $addProduct->user_name = AUth::user()->name;
@@ -36,14 +37,11 @@ class productsController extends Controller
         $addProduct->total_Amount = $request->total_Amount;
         $addProduct->product_Status = $request->productStatus;
 
-       
-
         $addProduct->save();
-       
-
+        
     }
 
-        return redirect()->back()->with('message', 'Product added successfully');
+        return redirect()->back()->with('message', 'Product Added Successfully');
 
         
     }
@@ -65,8 +63,6 @@ class productsController extends Controller
 
     public function updateProductConfirm(Request $request, $id){
         $product = product::find($id);
-        $product->user_id = Auth::id();
-        $product->user_name = AUth::user()->name;
         $product->product_Name = $request->productName;
         $product->product_Category = $request->productCategory;
         $product->product_Brand = $request->productBrand;
@@ -74,12 +70,14 @@ class productsController extends Controller
         $product->product_Price = $request->productPrice;
         $product->product_Quantity = $request->productQuantity;
         $product->total_Amount = $request->total_Amount;
+        $product->Updated_Stock = $request->Updated_Stock;
+
         $product->product_Status = $request->productStatus;
 
         $product->save();
 
         return redirect()->back()->with('message', 'Product Updated Successfully');
-
+        
     }
 
     public function removeProduct($id)

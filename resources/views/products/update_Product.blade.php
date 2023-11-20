@@ -2,11 +2,17 @@
 @section('content')
 
 <div class="page-wrapper">
+@if (session()->has('message'))
+    <div class="alert alert-warning alert-dismissible fade show w-25" role="alert">
+      <strong>{{session()->get('message')}}</strong>
+      <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"><b>X</b></button>
+    </div>
+@endif  
             <div class="content">
                 <div class="page-header">
                     <div class="page-title">
-                        <h4>Product Add</h4>
-                        <h6>Create new product</h6>
+                        <h4>Update Product</h4>
+                        <h6>Update selected Product</h6>
                     </div>
                 </div>
 
@@ -72,21 +78,28 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Price</label>
-                                        <input type="text" name="productPrice" class="form-control"   value="{{ $product->product_Price }}" ng-model="prodPrice">
+                                        <input type="text" name="productPrice" class="form-control" onchange="updateProduct()"  value="{{ $product->product_Price }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Quantity</label>
-                                        <input type="text" name="productQuantity" class="form-control"  value="{{ $product->product_Quantity }}" ng-model="prodQuantity">
+                                        <label>Current Quantity</label>
+                                        <input type="text" name="productQuantity" id="productQuantity" class="form-control" onchange="updateProduct()" value="{{ $product->product_Quantity }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Total Amount</label>
-                                        <input type="text" name="total_Amount" class="form-control" value="@{{ prodPrice * prodQuantity }}" value="{{ $product->total_Amount }}" readonly>
+                                        <input type="text" name="total_Amount" id="totalAmount" class="form-control" value="{{ $product->total_Amount }}" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Update Quantity</label>
+                                        <input type="text" name="Updated_Stock" id="UpdateQuantity" class="form-control"  value="{{ $product->Update_Stcok }}" onkeyup="updateProduct()">
                                     </div>
                                 </div>
 
@@ -114,7 +127,23 @@
                     </div>
                 </form>
 
+
+
             </div>
         </div>
+
+        <script>
+        function updateProduct(){
+            let productQuantity = document.getElementById("productQuantity").value;
+            let productPrice = document.getElementById("productPrice").value;
+            let updateQuantity = documentlgetElementById("UpdateQuantity").value;
+
+            let totalAmount = updateQuantity + productQuantity;
+
+            document.getElementById("totalAmount").value = totalAmount;
+        }
+
+
+        </script>
 
 @endsection
