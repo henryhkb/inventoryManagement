@@ -25,6 +25,7 @@
 	<link href="{{asset('assets/datatable/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" />
 	<link href="{{asset('assets/datatable/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 	<link href="{{asset('assets/datatable/css/responsive.dataTables.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/plugins/sweetAlert/sweetalert2.min.css')}}" rel="stylesheet">
 
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -156,8 +157,9 @@
     
         <script src="{{ asset('assets/js/script.js')}}"></script>
 
-        <script src="{{ asset('assets/plugins/angular/angular.min.js')}}"></script>
+        <script src="{{ asset('assets/plugins/sweetAlert/sweetalert2.all.min.js')}}"></script>
 
+        
         <script src="{{asset('assets/datatable/js/jquery.dataTables.min.js')}}"></script>
 		<script src="{{asset('assets/datatable/js/dataTables.dataTables.min.js')}}"></script>
 		<script src="{{asset('assets/datatable/js/dataTables.responsive.min.js')}}"></script>

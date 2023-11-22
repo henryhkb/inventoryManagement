@@ -69,6 +69,7 @@ class productsController extends Controller
         $product->product_Location = $request->productLocation;
         $product->product_Price = $request->productPrice;
         $product->product_Quantity = $request->productQuantity;
+        $product->previous_Quantity = $request->previousQuantity;
         $product->total_Amount = $request->total_Amount;
         $product->Updated_Stock = $request->Updated_Stock;
 
@@ -86,6 +87,15 @@ class productsController extends Controller
         $product->delete();
 
         return redirect()->back()->with('message', 'Product Deleted Successfully');
+    }
+
+    // function for detail product
+    public function detailProduct($id)
+    {
+        $detail = product::find($id);
+
+        return view('products.detailProduct', compact('detail'));
+        
     }
 
    

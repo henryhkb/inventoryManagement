@@ -48,6 +48,7 @@ Route::get('/productList', [productsController::class,'productList']);
 Route::get('/updateProduct/{id}', [productsController::class,'updateProduct']);
 Route::post('/updateProductConfirm/{id}', [productsController::class,'updateProductConfirm']);
 Route::get('/removeProduct/{id}', [productsController::class, 'removeProduct']);
+Route::get('/detailProduct/{id}', [productsController::class, 'detailProduct']);
 //end of routes for products
 
 Route::get('/addCategory', function(){

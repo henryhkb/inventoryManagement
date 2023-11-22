@@ -33,16 +33,12 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Category</label>
-                                        
-
                                         <select class="select form-control" name="productCategory" required>
                                             <option>Choose Category</option>
                                             @foreach ($category as $category)
                                                 <option value="{{ $category->categoryName }}">{{ $category->categoryName}}</option>
                                             @endforeach
-                                        </select>
-
-                                        
+                                        </select>    
                                     </div>
                                 </div>
                                 
@@ -73,7 +69,7 @@
                             
                                 
                                 
-                            <div class="row" ng-app="">   
+                            <div class="row" >   
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Price</label>
@@ -107,6 +103,10 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                
+                            </div>
+
                                 <div class="col-lg-12">
                                     <input type="submit" class="btn btn-submit me-2 bg-success" value="Submit">
                                     <a href="{{url('productList')}}" class="btn btn-cancel bg-info">Cancel</a>
@@ -125,6 +125,7 @@
         if(isNaN(productPrice)) productPrice = 0;
         let productQuantity = parseFloat(document.getElementById("productQuantity").value);
         if(isNaN(productQuantity)) productQuantity = 0;
+        
         let result = productPrice * productQuantity;
         document.getElementById("totalAmount").value = result;
     }

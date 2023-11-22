@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            $table->string('total_Amount');
+            $table->string('total_Amount')->nullable();
         });
     }
 

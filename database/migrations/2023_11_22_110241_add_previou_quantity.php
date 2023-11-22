@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            $table->string('product_Quantity')->nullable();
+            $table->string('previous_Quantity')->nullable();
         });
     }
 
@@ -24,7 +24,6 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            
         });
     }
 };

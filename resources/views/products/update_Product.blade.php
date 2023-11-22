@@ -77,35 +77,43 @@
                             <div class="row" ng-app="">   
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Price</label>
-                                        <input type="text" name="productPrice" class="form-control" onchange="updateProduct()"  value="{{ $product->product_Price }}">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
                                         <label>Current Quantity</label>
-                                        <input type="text" name="productQuantity" id="productQuantity" class="form-control" onchange="updateProduct()" value="{{ $product->product_Quantity }}">
+                                        <input type="text" name="productQuantity" id="productQuantity" class="form-control" value="{{ $product->product_Quantity }}">
                                     </div>
                                 </div>
+
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Total Amount</label>
-                                        <input type="text" name="total_Amount" id="totalAmount" class="form-control" value="{{ $product->total_Amount }}" readonly>
+                                        <label>Previous Quantity</label>
+                                        <input type="text" name="previousQuantity" id="previousQuantity" class="form-control">
                                     </div>
                                 </div>
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Update Quantity</label>
-                                        <input type="text" name="Updated_Stock" id="UpdateQuantity" class="form-control"  value="{{ $product->Update_Stcok }}" onkeyup="updateProduct()">
-                                    </div>
-                                </div>
-
-
-
                                 
+
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Update Quantity By</label>
+                                        <input type="text" name="Updated_Stock" id="UpdateQuantity" class="form-control"  value="{{ $product->Updated_Stock }}">
+                                    </div>
+                                </div> 
+                           
+
+
+
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input type="text" name="productPrice" class="form-control"  value="{{ $product->product_Price }}">
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Total Amount</label>
+                                    <input type="text" name="total_Amount" id="totalAmount" class="form-control"value="{{ $product->total_Amount }}" readonly>
+                                </div>
                             </div>
 
                             <div class="col-lg-3 col-sm-6 col-12">
@@ -118,6 +126,8 @@
                                 </div>
                             </div>
 
+
+                        </div>
                                 <div class="col-lg-12">
                                     <input type="submit" class="btn btn-submit me-2 bg-success" value="Update">
                                     <a href="{{url('productList')}}" class="btn btn-cancel">Cancel</a>
@@ -133,15 +143,18 @@
         </div>
 
         <script>
-        function updateProduct(){
-            let productQuantity = document.getElementById("productQuantity").value;
-            let productPrice = document.getElementById("productPrice").value;
-            let updateQuantity = documentlgetElementById("UpdateQuantity").value;
+        // function updateProduct(){
+        //     let productQuantity = parseFloat(document.getElementById("productQuantity").value);
+        //     if(isNaN(productQuantity)) productQuantity = 0; 
+        //     let productPrice = parseFloat(document.getElementById("productPrice").value);
+        //     if(isNaN(productPrice)) productPrice = 0;
+        //     let updateQuantity = documentlgetElementById("UpdateQuantity").value;
+        //     if(isNaN(updateQuantity)) updateQuantity = 0;
 
-            let totalAmount = updateQuantity + productQuantity;
+            
 
-            document.getElementById("totalAmount").value = totalAmount;
-        }
+            
+        // }
 
 
         </script>

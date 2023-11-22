@@ -2,13 +2,6 @@
 @section('content')
 
 <div class="page-wrapper">
-    @if (session()->has('message'))
-    <div class="alert alert-warning alert-dismissible fade show w-25" role="alert">
-      <strong>{{session()->get('message')}}</strong>
-      <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close">&times;</button>
-    </div>
-@endif
-
     <div class="content">
         @if (session()->has('message'))
         <div class="alert alert-warning alert-dismissible fade show w-25" role="alert">

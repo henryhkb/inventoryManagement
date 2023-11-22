@@ -28,11 +28,12 @@
                                 <th>Category </th>
                                 <th>Brand</th>
                                 <th>Location</th>
+                                <th>Current Quantity</th>
+                                <th>Previous Quantity</th>
+                                <th>Updated Quantity By</th>
                                 <th>Price GH₵</th>
-                                <th>Quantity</th>
-                                <th>Updated Quantity</th>
                                 <th>Total GH₵</th>
-                                <th>Product Status</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -44,19 +45,19 @@
                                 <td>{{ $product->product_Name }}</td>   
                                 <td>{{ $product->product_Category }}</td>   
                                 <td>{{ $product->product_Brand }}</td>   
-                                <td>{{ $product->product_Location}}</td>   
-                                <td>{{ $product->product_Price }}</td> 
-                               
-
+                                <td>{{ $product->product_Location}}</td> 
                                 @if ($product->product_Quantity < 60)
                                 <td class="text text-danger">{{ $product->product_Quantity }}</td>  
-                                @endif  
+                                @endif 
+                                <td>{{ $product->previous_Quantity }}</td>
                                 <td>{{ $product->Updated_Stock }}</td>
+                                <td>{{ $product->product_Price }}</td> 
                                 <td>{{ $product->total_Amount }}</td>   
                                 <td>{{ $product->product_Status }}</td>
                                 <td>
                                     <a href="{{url('removeProduct', $product->id)}}" class="fas fa-trash text text-danger"></a>
                                     <a href="{{ url('updateProduct', $product->id)}}" class="fas fa-pen text text-success"></a>
+                                    <a href="{{ url('detailProduct', $product->id)}}" class="fas fa-eye text text-info"></a>
                                 </td>   
                           </tr>
                           @endforeach
