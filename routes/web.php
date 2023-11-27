@@ -8,6 +8,7 @@ use App\Http\Controllers\categoryController;
 use App\Http\Controllers\brandController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\productTransferController;
 use App\Http\Controllers\storeController;
 
 /*
@@ -86,3 +87,11 @@ Route::get('/updateShop/{id}', [storeController::class,'updateShop']);
 Route::post('/confirmUpdate/{id}', [storeController::class,'confirmUpdate']);
 Route::get('/deleteShop/{id}', [storeController::class,'delete']);
 //End route for store
+
+
+//Route for Transfer
+Route::get('/addtransfer',function(){
+    return view('transfer.addTransfer');
+});
+Route::post('/addtransfer', [productTransferController::class, 'addTransfer']);
+Route::get('/transferList',[productTransferController::class, 'transferList']);

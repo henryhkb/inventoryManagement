@@ -55,23 +55,6 @@
                                         <input type="text" class="form-control" value="{{ $detail->product_Quantity }}" readonly>
                                     </div>
                                 </div>
-
-
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Previous Quantity</label>
-                                        <input type="text" class="form-control" value="" readonly>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Update Quantity By</label>
-                                        <input type="text" class="form-control" value="{{ $detail->Updated_Stock }}" readonly>
-                                    </div>
-                                </div>    
                            
 
                             <div class="col-lg-3 col-sm-6 col-12">

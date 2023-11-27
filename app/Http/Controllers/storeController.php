@@ -12,7 +12,6 @@ class storeController extends Controller
         $addShop = new shop;
         $addShop->Shopname = $request->shopName;
         $addShop->Description = $request->shopDescription;
-
         $addShop->save();
 
         return redirect()->back();
@@ -32,7 +31,6 @@ class storeController extends Controller
         $shop = shop::find($id);
         $shop->shopname = $request->shopName;
         $shop->Description = $request->shopDescription;
-
         $shop->save();
         return redirect()->back()->with('message', 'Shop Updated Successfully');
 
@@ -41,7 +39,6 @@ class storeController extends Controller
     public function delete($id){
         $shop = shop::find($id);
         $shop->delete();
-        
         return redirect()->back()->with('message', 'Shop Deleted Successfully');
     }
 

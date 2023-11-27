@@ -29,8 +29,6 @@
                                 <th>Brand</th>
                                 <th>Location</th>
                                 <th>Current Quantity</th>
-                                <th>Previous Quantity</th>
-                                <th>Updated Quantity By</th>
                                 <th>Price GH₵</th>
                                 <th>Total GH₵</th>
                                 <th>Status</th>
@@ -47,10 +45,8 @@
                                 <td>{{ $product->product_Brand }}</td>   
                                 <td>{{ $product->product_Location}}</td> 
                                 @if ($product->product_Quantity < 60)
-                                <td class="text text-danger">{{ $product->product_Quantity }}</td>  
+                                <td class="badge rounded-pill bg-danger text text-white" >{{ $product->product_Quantity }}</td>  
                                 @endif 
-                                <td>{{ $product->previous_Quantity }}</td>
-                                <td>{{ $product->Updated_Stock }}</td>
                                 <td>{{ $product->product_Price }}</td> 
                                 <td>{{ $product->total_Amount }}</td>   
                                 <td>{{ $product->product_Status }}</td>

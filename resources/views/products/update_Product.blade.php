@@ -78,27 +78,9 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Current Quantity</label>
-                                        <input type="text" name="productQuantity" id="productQuantity" class="form-control" value="{{ $product->product_Quantity }}">
+                                        <input type="number" name="productQuantity" id="productQuantity" class="form-control" value="{{ $product->product_Quantity }}">
                                     </div>
                                 </div>
-
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Previous Quantity</label>
-                                        <input type="text" name="previousQuantity" id="previousQuantity" class="form-control">
-                                    </div>
-                                </div>
-                                
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Update Quantity By</label>
-                                        <input type="text" name="Updated_Stock" id="UpdateQuantity" class="form-control"  value="{{ $product->Updated_Stock }}">
-                                    </div>
-                                </div> 
-                           
-
 
 
                             <div class="col-lg-3 col-sm-6 col-12">
@@ -121,6 +103,7 @@
                                     <label> Status</label>
                                     <select class="select form-control" name="productStatus">
                                         <option value="{{ $product->product_Status }}">{{ $product->product_Status }}</option>
+                                        <option value="Open">Open</option>
                                         <option value="Closed">Closed</option>
                                     </select>
                                 </div>
@@ -132,7 +115,6 @@
                                     <input type="submit" class="btn btn-submit me-2 bg-success" value="Update">
                                     <a href="{{url('productList')}}" class="btn btn-cancel">Cancel</a>
                                 </div>
-                            
                         </div>
                     </div>
                 </form>
@@ -143,18 +125,14 @@
         </div>
 
         <script>
-        // function updateProduct(){
-        //     let productQuantity = parseFloat(document.getElementById("productQuantity").value);
-        //     if(isNaN(productQuantity)) productQuantity = 0; 
-        //     let productPrice = parseFloat(document.getElementById("productPrice").value);
-        //     if(isNaN(productPrice)) productPrice = 0;
-        //     let updateQuantity = documentlgetElementById("UpdateQuantity").value;
-        //     if(isNaN(updateQuantity)) updateQuantity = 0;
-
-            
-
-            
-        // }
+        function updateProduct(){
+            let productQuantity = parseFloat(document.getElementById("productQuantity").value);
+            if(isNaN(productQuantity)) productQuantity = 0; 
+            let productPrice = parseFloat(document.getElementById("productPrice").value);
+            if(isNaN(productPrice)) productPrice = 0;
+            let updateQuantity = documentlgetElementById("UpdateQuantity").value;
+            if(isNaN(updateQuantity)) updateQuantity = 0;
+        }
 
 
         </script>
