@@ -93,5 +93,6 @@ Route::get('/deleteShop/{id}', [storeController::class,'delete']);
 Route::get('/addtransfer',function(){
     return view('transfer.addTransfer');
 });
-Route::post('/addtransfer', [productTransferController::class, 'addTransfer']);
+Route::post('/addTransfer', [productTransferController::class, 'addTransfer']);
+Route::get('/addtransfer', [productTransferController::class, 'viewtransfers']);
 Route::get('/transferList',[productTransferController::class, 'transferList']);

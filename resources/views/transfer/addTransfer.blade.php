@@ -25,9 +25,10 @@
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <select name="product_Name" id="">
+                                        <label for="">Select Product</label>
+                                        <select class="form-control" name="productName" id="">
                                             @foreach ($products as $product)
-                                            <option value="">{{ $product->product_Name }}</option>
+                                            <option value="{{ $product->product_Name }}">{{ $product->product_Name }}</option>
                                             @endforeach                                          
                                         </select>
                                     </div>
@@ -36,7 +37,7 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Transfer From</label>
-                                        <select class="select form-control" name="transfer_From" required>
+                                        <select class="select form-control" name="transferFrom" required>
                                             <option value="WareHouse">WareHouse</option>
                                             <option value="Shop One">Shop One</option>
                                             <option value="Shop Two">Shop Two</option>
@@ -47,7 +48,7 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Transfer To</label>
-                                        <select class="select form-control" name="transfer_To" required>
+                                        <select class="select form-control" name="transferTo" required>
                                             <option value="WareHouse">WareHouse</option>
                                             <option value="Shop One">Shop One</option>
                                             <option value="Shop Two">Shop Two</option>
@@ -63,7 +64,7 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Product Quantity To Transfer</label>
-                                        <input type="number" id="transferQuantity" name="transfer_Quantity"  class="form-control" onkeyup="add_number()" required>
+                                        <input type="number" id="transferQuantity" name="transferQuantity"  class="form-control" required>
                                     </div>
                                 </div>
                             </div>
