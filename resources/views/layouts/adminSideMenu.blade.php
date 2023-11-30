@@ -45,7 +45,7 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="active">
-                            <a href="{{ url('adminDashboard')}}"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
+                            <a href="{{ url('redirect')}}"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
                                     Dashboard</span> </a>
                         </li>
                         <li class="submenu">

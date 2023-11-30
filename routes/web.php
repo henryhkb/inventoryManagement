@@ -9,6 +9,7 @@ use App\Http\Controllers\brandController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\productTransferController;
+use App\Http\Controllers\salesController;
 use App\Http\Controllers\storeController;
 
 /*
@@ -35,7 +36,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
 Route::get('/redirect', [AuthController::class, 'redirect'])->middleware('auth', 'verified');
 
 
@@ -96,3 +96,11 @@ Route::get('/addtransfer',function(){
 Route::post('/addTransfer', [productTransferController::class, 'addTransfer']);
 Route::get('/addtransfer', [productTransferController::class, 'viewtransfers']);
 Route::get('/transferList',[productTransferController::class, 'transferList']);
+//End route for Transfer
+
+//Route for sales
+Route::get('/newSales', function(){
+    return view('sales.newSales');
+});
+Route::post('/addSales', [salesController::class, 'addSales']);
+

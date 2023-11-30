@@ -9,7 +9,7 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="307144.00">$307,144.00</span></h5>
+                                <h5>GH₵<span class="counters" data-count="{{ $totalProductAmount }}">${{ $totalProductAmount }}</span></h5>
                                 <h6>All Products Amount</h6>
                                 <h6 class="text text-primary"><a href="">More info</a></h6>    
                             </div>
@@ -48,8 +48,8 @@
                                 <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="40000.00">400.00</span></h5>
-                                <h6>Stock Account</h6>
+                                <h5><span class="counters" data-count="{{ $productQuantity }}">${{ $productQuantity }}</span></h5>
+                                <h6>All Product Quantity</h6>
                                 <h6 class="text text-primary"><a href="">More info</a></h6>  
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count">
                             <div class="dash-counts">
-                                <h4>100</h4>
+                                <h4>{{ $totalProducts }}</h4>
                                 <h5>Products</h5>
                                 <div class="text text-danger"><a href="{{ url('productList') }}">Details</a></div>  
                             </div>
@@ -71,7 +71,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das1">
                             <div class="dash-counts">
-                                <h4>100</h4>
+                                <h4>{{$totalUsers}}</h4>
                                 <h5>Users</h5>
                                 <div class="text text-danger"><a href="{{ url('userList') }}">Details</a></div>  
                             </div>
@@ -94,7 +94,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das3">
                             <div class="dash-counts">
-                                <h4>105</h4>
+                                <h4>{{$productBrand}}</h4>
                                 <h5>Brands</h5>
                                 <div class="text text-danger"><a href="{{url('brandList')}}">Details</a></div>  
                             </div>
@@ -107,7 +107,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count">
                             <div class="dash-counts">
-                                <h4>105</h4>
+                                <h4>{{$productCategory}}</h4>
                                 <h5>Categories</h5>
                                 <div class="text text-danger"><a href="{{url('categoryList')}}">Details</a></div>  
                             </div>
@@ -236,72 +236,32 @@
                 </div>
                 <div class="card mb-0">
                     <div class="card-body">
-                        <h4 class="card-title">Expired Products</h4>
+                        <h4 class="card-title">Sample of Products</h4>
                         <div class="table-responsive dataview">
                             <table class="table datatable ">
                                 <thead>
                                     <tr>
-                                        <th>SNo</th>
-                                        <th>Product Code</th>
                                         <th>Product Name</th>
                                         <th>Brand Name</th>
                                         <th>Category Name</th>
-                                        <th>Expiry Date</th>
+                                        <th>Product Location</th>
+                                        <th>Product Quantity</th>
+                                        <th>Product Price</th>
+                                        <th>Total Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($listProduct as $listProduct)
                                     <tr>
-                                        <td>1</td>
-                                        <td><a href="javascript:void(0);">IT0001</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product2.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Orange</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>12-12-2022</td>
+                                        <td>{{ $listProduct->product_Name }}</td>
+                                        <td>{{ $listProduct->product_Brand }}</td>
+                                        <td>{{ $listProduct->product_Category }}</td>
+                                        <td>{{ $listProduct->product_Location }}</td>
+                                        <td>{{ $listProduct->product_Quantity }}</td>
+                                        <td>{{ $listProduct->product_Price }}</td>  
+                                        <td>{{ $listProduct->total_Amount }}</td>  
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><a href="javascript:void(0);">IT0002</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product3.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Pineapple</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>25-11-2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><a href="javascript:void(0);">IT0003</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product4.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Stawberry</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>19-11-2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td><a href="javascript:void(0);">IT0004</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product5.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Avocat</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>20-11-2022</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

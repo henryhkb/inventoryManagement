@@ -1,4 +1,4 @@
-@extends('layouts.adminSideMenu')
+@extends('layouts.userSideMenu')
 @section('content')
 
 <div class="page-wrapper">
@@ -11,19 +11,11 @@
         </div>
         
                 
-                <form action="{{ url('addProduct') }}" method="post">
+                <form action="{{ url('addSales') }}" method="post">
                     @csrf
                     <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <input type="text" name="salesDate" class="form-control" required>
-                                    </div>
-                                </div>              
-
+                        <div class="card-body p-5">
+                            <div class="row m-1">
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Customer Name</label>
@@ -40,8 +32,16 @@
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Product Quantity</label>
-                                        <input type="text" name="productQuantity" placeholder="product Quantity" class="form-control" required>
+                                        <label>Available Product Quantity</label>
+                                        <input type="text" name="productQuantity" placeholder="product Quantity" class="form-control" readonly>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Customer  Quantity</label>
+                                        <input type="text" name="productQuantity" placeholder="product Quantity" class="form-control">
                                     </div>
                                 </div>
 
@@ -49,11 +49,18 @@
                             
                                 
                                 
-                            <div class="row">   
+                            <div class="row m-1">   
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input type="text" name="productPrice" class="form-control" >
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Total Amount</label>
-                                        <input type="text" name="totalAmount" name="totalAmount" class="form-control" required>
+                                        <input type="text" name="productPrice" class="form-control" >
                                     </div>
                                 </div>
 
@@ -67,22 +74,14 @@
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Amount Due</label>
+                                        <label>Balance</label>
                                         <input type="text" placeholder="Amount Due" name="amountDue" class="form-control" required>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-3 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Biller</label>
-                                        <input type="text" placeholder="Biller" name="biller" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-lg-12">
-                                <input type="submit" class="btn btn-submit me-2" value="Submit">
+                                <input type="submit" class="btn btn-submit bg-primary me-2" value="Submit">
                                 <a href="{{ url('saleslist')}}" class="btn btn-cancel">Cancel</a>
                             </div>                   
                 </form>

@@ -58,14 +58,14 @@
                         </li>
                        
                         
-                        <li class="submenu">
+                        {{-- <li class="submenu">
                             <a href="javascript:void(0);"><img src={{asset("assets/img/icons/transfer1.svg")}}
                                     alt="img"><span> Transfer</span> <span class="menu-arrow"></span></a>
                             <ul>
                                 <li><a href="{{ url('transferlist') }}">Transfer List</a></li>
                                 <li><a href="{{ url('addtransfer')}}">Add Transfer </a></li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                        
   
@@ -73,13 +73,13 @@
                             <a href="javascript:void(0);"><img src={{url("assets/img/icons/time.svg")}} alt="img"><span>
                                     Report</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="{{ url('purchaseOrderReport') }}">Purchase order report</a></li>
+                                {{-- <li><a href="{{ url('purchaseOrderReport') }}">Purchase order report</a></li> --}}
                                 <li><a href="{{ url('inventoryReport') }}">Inventory Report</a></li>
                                 <li><a href="{{ url('salesReport') }}">Sales Report</a></li>
                                 <li><a href="{{ url('invoiceReport')}}">Invoice Report</a></li>
-                                <li><a href="{{ url('purchaseReport')}}">Purchase Report</a></li>
+                                {{-- <li><a href="{{ url('purchaseReport')}}">Purchase Report</a></li>
                                 <li><a href="{{ url('supplierReport')}}">Supplier Report</a></li>
-                                <li><a href="{{ url('customerReport')}}">Customer Report</a></li>
+                                <li><a href="{{ url('customerReport')}}">Customer Report</a></li> --}}
                             </ul>
                         </li>
                     </ul>
